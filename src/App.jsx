@@ -34,8 +34,8 @@ export default function App() {
   };
 
   return (
-    <div className="flex flex-col w-full min-h-screen max-h-full bg-[#121212] items-center p-10 gap-10">
-      <form onSubmit={handleForm} className="flex w-[30%] h-auto flex-col gap-10 p-10 bg-[#3498db] rounded-md">
+    <div className="flex flex-col w-full md:min-h-screen xs:min-h-[100vh] max-h-full bg-[#121212] items-center md:p-10 xs:p-2 gap-10">
+      <form onSubmit={handleForm} className="flex lg:w-[30%] md:w-[60%] xs:w-full h-auto flex-col md:gap-10 xs:gap-5 md:p-10 xs:p-4 bg-[#3498db] rounded-md">
         <h3 className="text-2xl text-center uppercase font-semibold">Daily Run Rate</h3>
         <div className="flex flex-row w-full justify-between">
           <label htmlFor="startDate">Start Date:</label>
@@ -44,7 +44,7 @@ export default function App() {
             id="startDate"
             name="startDate"
             onChange={handleChange}
-            className="w-40 px-4 rounded-sm"
+            className="w-40 md:px-4 xs:px-1 rounded-sm"
           ></input>
         </div>
         <div className="flex flex-row w-full justify-between">
@@ -54,7 +54,7 @@ export default function App() {
             id="endDate"
             name="endDate"
             onChange={handleChange}
-            className="w-40 px-4 rounded-sm"
+            className="w-40 md:px-4 xs:px-1 rounded-sm"
           ></input>
         </div>
         <div className="flex flex-row w-full justify-between">
@@ -66,7 +66,7 @@ export default function App() {
             onChange={handleChange}
             min={state.startDate}
             max={state.endDate}
-            className="w-40 px-4 rounded-sm"
+            className="w-40 md:px-4 xs:px-1 rounded-sm"
           ></input>
         </div>
         <div className="flex flex-row w-full justify-between">
@@ -77,11 +77,11 @@ export default function App() {
             id="leadCount"
             name="leadCount"
             placeholder="0"
-            className="w-40 px-4 rounded-sm"
+            className="w-40 md:px-4 xs:px-1 rounded-sm"
             onChange={handleChange}>
           </input>
         </div>
-        <button type="submit" className="bg-[#F1C40F] py-3 rounded-sm uppercase font-semibold hover:bg-[#27AE60] transition-all">Submit</button>
+        <button type="submit" className="bg-[#F1C40F] md:py-3 xs:py-2 rounded-sm uppercase font-semibold hover:bg-[#27AE60] transition-all">Submit</button>
       </form>
       <Table data={data} />
     </div>
